@@ -7,7 +7,10 @@
     <meta name="description" content="Portfolio of Madhav Manu — AI Researcher, Builder, and Founder shipping real-world AI systems, GovTech, and cybersecurity solutions from Kerala.">
     <meta property="og:title" content="Madhav Manu — AI Researcher & Builder">
     <meta property="og:description" content="Designing systems, not slides.">
+    <meta property="og:image" content="Title.png">
     <meta name="theme-color" content="#0A0A0A">
+    <link rel="icon" type="image/png" href="Title.png" />
+    <link rel="apple-touch-icon" href="Title.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
@@ -338,13 +341,13 @@
         animation: scan 7s linear infinite;
       }
 
-      /* Three-column hero grid */
+      /* Three-column hero grid centered */
       .hero-main {
         position: relative; z-index: 1;
         padding: 28px 40px;
         border-bottom: var(--border);
         display: grid;
-        grid-template-columns: 1.1fr 1fr 360px;
+        grid-template-columns: 1fr 340px 1fr;
         grid-template-rows: 1fr;
         gap: 24px;
         align-items: center;
@@ -360,7 +363,7 @@
       .hex-coords .acc { color: var(--accent); animation: blink 3s infinite; }
 
       /* Hero left */
-      .hero-left { display: flex; flex-direction: column; position: relative; z-index: 3; }
+      .hero-left { display: flex; flex-direction: column; position: relative; z-index: 1; }
 
       .hero-tag {
         font-family: var(--f-mono); font-size: 10px; font-weight: 700;
@@ -384,7 +387,7 @@
         margin-bottom: 28px;
         white-space: nowrap;
         position: relative;
-        z-index: 2;
+        z-index: 1;
       }
       .hero-headline .accent-word { color: var(--accent); display: block; }
 
@@ -394,7 +397,7 @@
         max-width: 480px; line-height: 1.65;
         border-left: 6px solid var(--accent);
         padding-left: 20px; margin-bottom: 40px;
-        position: relative; z-index: 3;
+        position: relative; z-index: 1;
       }
 
       /* Buttons */
@@ -440,17 +443,21 @@
 
       /* Hero center portrait */
       .hero-portrait {
+        position: relative;
+        z-index: 2;
+        display: flex; align-items: flex-end; justify-content: center;
+        align-self: stretch;
+        width: 340px; /* Fixed container width for the grid */
+      }
+      .hero-portrait img {
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1;
-        display: flex; align-items: flex-end; justify-content: center;
-        height: 100%;
-        pointer-events: none;
-      }
-      .hero-portrait img {
-        height: 110%; width: auto; max-width: none;
+        height: 105%; /* Let it grow tall into a portrait */
+        max-height: 90vh;
+        width: auto;
+        max-width: none;
         object-fit: contain; object-position: bottom;
         filter: grayscale(0.05) contrast(1.05);
         transition: filter 0.4s ease, transform 0.4s ease;
@@ -458,7 +465,7 @@
         transform-origin: bottom center;
         pointer-events: auto;
       }
-      .hero-portrait img:hover { filter: grayscale(0) contrast(1.1); transform: scale(1.02); }
+      .hero-portrait img:hover { filter: grayscale(0) contrast(1.1); transform: translateX(-50%) scale(1.02); }
       .hero-portrait::after {
         content: ''; position: absolute; bottom: 0; left: 10%; right: 10%;
         height: 4px; background: var(--accent);
@@ -466,7 +473,12 @@
       }
 
       /* Hero right panels */
-      .hero-right { display: flex; flex-direction: column; gap: 16px; }
+      .hero-right {
+        display: flex; flex-direction: column; gap: 16px;
+        justify-self: end;
+        width: 100%;
+        max-width: 380px;
+      }
 
       /* AI Panel */
       .ai-panel {
