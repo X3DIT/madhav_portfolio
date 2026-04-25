@@ -941,7 +941,13 @@
           justify-self: center;
           pointer-events: auto;
         }
-        .hero-portrait img { max-height: 45vh; height: auto; transform-origin: bottom center; }
+        .hero-portrait img { 
+          position: static;
+          max-height: 45vh; 
+          height: auto; 
+          transform: none;
+          transform-origin: bottom center; 
+        }
         .hero-portrait::after { display: block; }
         .hero-left { grid-column: 1; grid-row: 2; }
         .hero-right { grid-column: 2; grid-row: 2; }
@@ -999,9 +1005,13 @@
           pointer-events: none;
         }
         .hero-portrait img {
+          position: static;
+          max-height: none;
           height: auto;
           width: 100%;
+          transform: none;
           transform-origin: top right;
+          object-position: top;
         }
         .hero-portrait::after {
           display: none;
@@ -1010,7 +1020,7 @@
         .hero-right { grid-column: 1; grid-row: 2; display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 2; }
 
         .hero-headline { font-size: clamp(48px, 14vw, 88px); margin-bottom: 20px; }
-        .hero-sub { font-size: 15px; margin-bottom: 24px; padding-left: 16px; border-left-width: 4px; }
+        .hero-sub { font-size: 15px; margin-bottom: 24px; padding-left: 16px; border-left-width: 4px; max-width: 60%; }
         .hero-tag { font-size: 9px; padding: 6px 12px; margin-bottom: 18px; }
         .hero-actions { gap: 10px; flex-wrap: wrap; }
         .btn { padding: 13px 20px; font-size: 10px; min-height: 44px; }
